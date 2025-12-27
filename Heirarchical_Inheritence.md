@@ -31,6 +31,57 @@ To write a Python program that uses **Hierarchical Inheritance** to input and di
 5. Display collected information using class methods.
 
 ## Program
-Add code here
+~~~
+# Base class
+class Details:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def getName(self):
+        return self.name
+
+    def getAge(self):
+        return self.age
+
+
+# Derived class 1
+class Employee(Details):
+    def __init__(self, name, age, employee_id, department):
+        super().__init__(name, age)
+        self.employee_id = employee_id
+        self.department = department
+
+    def getEmployeeDetails(self):
+        print("Employee Name:", self.getName())
+        print("Age:", self.getAge())
+        print("Employee ID:", self.employee_id)
+        print("Department:", self.department)
+
+
+# Derived class 2
+class Patient(Details):
+    def __init__(self, name, age, patient_id, disease):
+        super().__init__(name, age)
+        self.patient_id = patient_id
+        self.disease = disease
+
+    def getPatientDetails(self):
+        print("Patient Name:", self.getName())
+
+        print("Age:",
+
+~~~
 ## Sample Output
 
+   Employee Name: Rahul
+Age: 30
+Employee ID: 101
+Department: IT
+
+Patient Name: Anita
+Age: 25
+Patient ID: 201
+Disease: Fever
+##Result
+Inheritance is successfully implemented where Employee and Patient classes reuse common attributes from the Details base class and display their respective details.
