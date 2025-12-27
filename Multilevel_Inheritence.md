@@ -26,7 +26,57 @@ To write a Python program that uses multilevel inheritance to get and display a 
    - Print all details using class methods.
 
 ## Program
-Add code here
+~~~
+# Parent class
+class Parent:
+    def __init__(self, name):
+        self.name = name
 
+    def getName(self):
+        return self.name
+
+
+# Child class
+class Child(Parent):
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age
+
+    def getAge(self):
+        return self.age
+
+
+# Grandchild class
+class Grandchild(Child):
+    def __init__(self, name, age, location):
+        super().__init__(name, age)
+        self.location = location
+
+    def getLocation(self):
+        return self.location
+
+
+# User input
+name = input("Enter name: ")
+age = int(input("Enter age: "))
+location = input("Enter location: ")
+
+# Create object of Grandchild
+g = Grandchild(name, age, location)
+
+# Display details
+print("Name:", g.getName())
+print("Age:", g.getAge())
+print("Location:", g.getLocation())
+
+~~~
 ## Sample Output
 
+Enter name: Arun
+Enter age: 21
+Enter location: Chennai
+Name: Arun
+Age: 21
+Location: Chennai
+##Result
+Multilevel inheritance is successfully implemented where the Grandchild class accesses data from both Parent and Child classes using super().
