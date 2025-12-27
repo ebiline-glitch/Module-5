@@ -12,8 +12,30 @@ To write a Python program that creates a **Student** class with a **default cons
 
 ## 🧾 Program
 
-Add code here
+~~~
+class Student:
+    # Default constructor
+    def __init__(self):
+        self.name = input("Enter student name: ")
 
+    # Method to display welcome message
+    def welcome(self):
+        print("Welcome,", self.name)
+
+# Create object of Student class
+s1 = Student()
+
+# Call the method
+s1.welcome()
+
+
+
+~~~
 ## Output
 
+Enter student name: Ebiline
+Welcome, Ebiline
+
+
 ## Result
+A Student class is created with a default constructor that accepts the student’s name and displays a welcome message successfully.
